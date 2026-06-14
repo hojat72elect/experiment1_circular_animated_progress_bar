@@ -45,17 +45,20 @@ export const RingProgress = ({radius = 100, strokeWidth = 20, progress}: {
                 {/*The foreground circle*/}
                 <AnimatedCircle
                     animatedProps={animatedProps}
+                    r={innerRadius}
                     cx={radius}
                     cy={radius}
-                    r={innerRadius}
+                    transform={`rotate(-90, ${radius}, ${radius})`}
                     strokeWidth={strokeWidth}
                     stroke={backGroundColor}
                     strokeLinecap={"round"}
-                    transform={`rotate(-90, ${radius}, ${radius})`}
                 />
             </Svg>
-            <AntDesign name="arrow-right" size={strokeWidth * 0.6} color="black"
-                       style={{position: "absolute", alignSelf: "center", top: 0.1 * strokeWidth}}/>
+            <AntDesign
+                name="arrow-right"
+                size={strokeWidth * 0.6}
+                color="black"
+                style={{position: "absolute", alignSelf: "center", top: 0.1 * strokeWidth}}/>
         </View>
     )
 }
