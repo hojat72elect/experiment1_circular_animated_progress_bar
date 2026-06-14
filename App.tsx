@@ -1,5 +1,6 @@
 import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, Text, View} from 'react-native';
+import {RingProgress} from "./src/RingProgress";
 
 const Value = ({label, value}: { label: string, value: string }) => (
     <View style={styles.valueContainer}>
@@ -11,6 +12,8 @@ const Value = ({label, value}: { label: string, value: string }) => (
 export default function App() {
     return (
         <View style={styles.container}>
+
+            <RingProgress/>
             <View style={{flexDirection: "row"}}>
                 <Value label="Steps" value="1220"/>
                 <Value label="Distance" value="0,75 km"/>
