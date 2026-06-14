@@ -14,7 +14,7 @@ export default function App() {
         <View style={styles.container}>
 
             <RingProgress/>
-            <View style={{flexDirection: "row"}}>
+            <View style={{flexDirection: "row", marginTop: 80}}>
                 <Value label="Steps" value="1220"/>
                 <Value label="Distance" value="0,75 km"/>
             </View>

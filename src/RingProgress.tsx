@@ -1,9 +1,11 @@
 import {View} from "react-native";
 import Svg, {Circle} from "react-native-svg";
 
-export const RingProgress = ({radius = 100}: { radius?: number }) => {
+export const RingProgress = ({radius = 100, strokeWidth = 30}: { radius?: number, strokeWidth?: number }) => {
 
     const backGroundColor = "#EE0F55"
+    const innerRadius = radius - strokeWidth / 2;
+    const circumference = 2 * Math.PI * innerRadius;
 
     return (
         <View style={{
@@ -12,7 +14,25 @@ export const RingProgress = ({radius = 100}: { radius?: number }) => {
             alignSelf: "center"
         }}>
             <Svg>
-                <Circle r={radius} fill={backGroundColor} cx={radius} cy={radius}/>
+                {/*The background circle*/}
+                <Circle
+                    cx={radius}
+                    cy={radius}
+                    r={innerRadius}
+                    strokeWidth={strokeWidth}
+                    stroke={backGroundColor}
+                    opacity={0.2}
+                />
+                {/*The foreground circle*/}
+                <Circle
+                    cx={radius}
+                    cy={radius}
+                    r={innerRadius}
+                    strokeWidth={strokeWidth}
+                    stroke={backGroundColor}
+                    strokeDasharray={[circumference * 0.75, circumference]}
+                    strokeLinecap={"round"}
+                />
             </Svg>
         </View>
     )
