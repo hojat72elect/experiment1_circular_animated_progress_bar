@@ -13,7 +13,7 @@ export default function App() {
     return (
         <View style={styles.container}>
 
-            <RingProgress/>
+            <RingProgress progress={1}/>
             <View style={{flexDirection: "row", marginTop: 80}}>
                 <Value label="Steps" value="1220"/>
                 <Value label="Distance" value="0,75 km"/>
