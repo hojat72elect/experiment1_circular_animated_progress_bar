@@ -47,13 +47,11 @@ export const RingProgress = ({radius = 100, strokeWidth = 20, progress}: {
                     animatedProps={animatedProps}
                     cx={radius}
                     cy={radius}
-                    originX={radius}
-                    originY={radius}
                     r={innerRadius}
                     strokeWidth={strokeWidth}
                     stroke={backGroundColor}
                     strokeLinecap={"round"}
-                    rotation="-90"
+                    transform={`rotate(-90, ${radius}, ${radius})`}
                 />
             </Svg>
             <AntDesign name="arrow-right" size={strokeWidth * 0.6} color="black"
